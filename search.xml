@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>linux初级</title>
+    <url>/2022/11/09/linux%E5%88%9D%E7%BA%A7/</url>
+    <content><![CDATA[<h1 id="linux初级"><a href="#linux初级" class="headerlink" title="linux初级"></a>linux初级</h1><h2 id="1、什么是操作系统"><a href="#1、什么是操作系统" class="headerlink" title="1、什么是操作系统"></a>1、什么是操作系统</h2><p>​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁</p>
+<h2 id="2、linux系统常用命令"><a href="#2、linux系统常用命令" class="headerlink" title="2、linux系统常用命令"></a>2、linux系统常用命令</h2><h4 id="1-、ls命令"><a href="#1-、ls命令" class="headerlink" title="(1)、ls命令"></a>(1)、ls命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls --显示当前工作目录下的所有可见文件</span><br><span class="line">		 / :显示根目录下的所有文件</span><br><span class="line">		 -a :显示目录底下的所有文件，保存隐藏和可见文件</span><br><span class="line">		 -l :显示文件的详细信息</span><br><span class="line">		 -h :和-l配合使用，显示文件大小，b、k、m</span><br><span class="line">		 -lah :可组合使用</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-、目录切换命令"><a href="#2-、目录切换命令" class="headerlink" title="(2)、目录切换命令"></a>(2)、目录切换命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd [path] --有path时:跳转到某个路径底下</span><br><span class="line">						--无参数时: 跳转到home路径下</span><br><span class="line">$ pwd --查看当前所在目录</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-、mkdir命令"><a href="#3-、mkdir命令" class="headerlink" title="(3)、mkdir命令"></a>(3)、mkdir命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ mkdir [name] --创建文件夹</span><br><span class="line">        -p 可以根据输入到路径递归创建多个文件夹</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-、touch-cat-more-less命令"><a href="#4-、touch-cat-more-less命令" class="headerlink" title="(4)、touch-cat-more-less命令"></a>(4)、touch-cat-more-less命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ touch [file] --创建文件</span><br><span class="line">$ cat [file] --查看文件内容</span><br><span class="line">$ more [file] --可翻页显示文件内容，在文件内容过多的情况下使用，空格翻页，q退出</span><br><span class="line">$ less [file] --和more相反</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-、cp-mv-rm"><a href="#5-、cp-mv-rm" class="headerlink" title="(5)、cp-mv-rm"></a>(5)、cp-mv-rm</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cp [file/dir] [path] --复制文件/文件夹到某个文件夹下</span><br><span class="line">     -r 用于文件夹的复制</span><br><span class="line">$ mv [file/dir] [path] --移动文件/文件夹到某个目录下</span><br><span class="line">$ rm [file,.....filen] --删除多个文件或者文件夹</span><br><span class="line">     -r 用于文件夹到删除</span><br><span class="line">     -f 强制删除文件/文件夹</span><br><span class="line">     *通配符</span><br><span class="line">     test*:表示匹配删除test开头的内容</span><br><span class="line">     *test:表示删除匹配test结尾的内容</span><br><span class="line">     *test*:表示删除包含有test的内容</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>redis学习笔记</title>
     <url>/2022/10/04/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="Redis学习笔记"><a href="#Redis学习笔记" class="headerlink" title="Redis学习笔记"></a>Redis学习笔记</h1><h2 id="1-、什么是redis"><a href="#1-、什么是redis" class="headerlink" title="(1)、什么是redis?"></a>(1)、什么是redis?</h2><p>​    REmote DIctionary Server(Redis) 是一个由 Salvatore Sanfilippo 写的 key-value 存储系统，是跨平台的非关系型数据库。Redis 是一个开源的使用 ANSI C 语言编写、遵守 BSD 协议、支持网络、可基于内存、分布式、可选持久性的键值对(Key-Value)存储数据库，并提供多种语言的 API。Redis 通常被称为数据结构服务器，因为值（value）可以是**字符串(String)<strong>、</strong>哈希(Hash)<strong>、</strong>列表(list)<strong>、</strong>集合(sets)<strong>和</strong>有序集合(sorted sets)**等类型。</p>
@@ -124,29 +147,6 @@
         <tag>数据库</tag>
         <tag>noSQL</tag>
         <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>linux初级</title>
-    <url>/2022/11/09/linux%E5%88%9D%E7%BA%A7/</url>
-    <content><![CDATA[<h1 id="linux初级"><a href="#linux初级" class="headerlink" title="linux初级"></a>linux初级</h1><h2 id="1、什么是操作系统"><a href="#1、什么是操作系统" class="headerlink" title="1、什么是操作系统"></a>1、什么是操作系统</h2><p>​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁</p>
-<h2 id="2、linux系统常用命令"><a href="#2、linux系统常用命令" class="headerlink" title="2、linux系统常用命令"></a>2、linux系统常用命令</h2><h4 id="1-、ls命令"><a href="#1-、ls命令" class="headerlink" title="(1)、ls命令"></a>(1)、ls命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls --显示当前工作目录下的所有可见文件</span><br><span class="line">		 / :显示根目录下的所有文件</span><br><span class="line">		 -a :显示目录底下的所有文件，保存隐藏和可见文件</span><br><span class="line">		 -l :显示文件的详细信息</span><br><span class="line">		 -h :和-l配合使用，显示文件大小，b、k、m</span><br><span class="line">		 -lah :可组合使用</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-、目录切换命令"><a href="#2-、目录切换命令" class="headerlink" title="(2)、目录切换命令"></a>(2)、目录切换命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd [path] --有path时:跳转到某个路径底下</span><br><span class="line">						--无参数时: 跳转到home路径下</span><br><span class="line">$ pwd --查看当前所在目录</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-、mkdir命令"><a href="#3-、mkdir命令" class="headerlink" title="(3)、mkdir命令"></a>(3)、mkdir命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ mkdir [name] --创建文件夹</span><br><span class="line">        -p 可以根据输入到路径递归创建多个文件夹</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-、touch-cat-more-less命令"><a href="#4-、touch-cat-more-less命令" class="headerlink" title="(4)、touch-cat-more-less命令"></a>(4)、touch-cat-more-less命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ touch [file] --创建文件</span><br><span class="line">$ cat [file] --查看文件内容</span><br><span class="line">$ more [file] --可翻页显示文件内容，在文件内容过多的情况下使用，空格翻页，q退出</span><br><span class="line">$ less [file] --和more相反</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-、cp-mv-rm"><a href="#5-、cp-mv-rm" class="headerlink" title="(5)、cp-mv-rm"></a>(5)、cp-mv-rm</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cp [file/dir] [path] --复制文件/文件夹到某个文件夹下</span><br><span class="line">     -r 用于文件夹的复制</span><br><span class="line">$ mv [file/dir] [path] --移动文件/文件夹到某个目录下</span><br><span class="line">$ rm [file,.....filen] --删除多个文件或者文件夹</span><br><span class="line">     -r 用于文件夹到删除</span><br><span class="line">     -f 强制删除文件/文件夹</span><br><span class="line">     *通配符</span><br><span class="line">     test*:表示匹配删除test开头的内容</span><br><span class="line">     *test:表示删除匹配test结尾的内容</span><br><span class="line">     *test*:表示删除包含有test的内容</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
-        <tag>linux</tag>
       </tags>
   </entry>
 </search>
