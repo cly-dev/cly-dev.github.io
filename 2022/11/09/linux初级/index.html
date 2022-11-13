@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="linux初级1、什么是操作系统​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁 2、linux系统常用命令(1)、ls命令123456$ ls --显示当前工作目录下的所有可见文件		 &#x2F; :显示根目录下的所有文件		 -a :显示目录底下的所有文件，保存隐藏和可见文件		 -l :显示文件的详细信息		 -h :和-l配合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux初级">
+<meta property="og:url" content="http://example.com/2022/11/09/linux%E5%88%9D%E7%BA%A7/index.html">
+<meta property="og:site_name" content="阿勇者">
+<meta property="og:description" content="linux初级1、什么是操作系统​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁 2、linux系统常用命令(1)、ls命令123456$ ls --显示当前工作目录下的所有可见文件		 &#x2F; :显示根目录下的所有文件		 -a :显示目录底下的所有文件，保存隐藏和可见文件		 -l :显示文件的详细信息		 -h :和-l配合">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-13T15:24:22.071Z">
+<meta property="article:author" content="cly-dev">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/11/09/linux%E5%88%9D%E7%BA%A7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/11/09/linux%E5%88%9D%E7%BA%A7/","path":"2022/11/09/linux初级/","title":"linux初级"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>linux初级 | 阿勇者</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">阿勇者</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E5%88%9D%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">linux初级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.</span> <span class="nav-text">1、什么是操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81linux%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">2、linux系统常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E3%80%81ls%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">(1)、ls命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E3%80%81%E7%9B%AE%E5%BD%95%E5%88%87%E6%8D%A2%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">(2)、目录切换命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E3%80%81mkdir%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">(3)、mkdir命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E3%80%81touch-cat-more-less%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">(4)、touch-cat-more-less命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E3%80%81cp-mv-rm"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">(5)、cp-mv-rm</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">cly-dev</p>
+  <div class="site-description" itemprop="description">两周一更的计划开始啦,向高级攻城狮出发，加油！！</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/09/linux%E5%88%9D%E7%BA%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="cly-dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿勇者">
+      <meta itemprop="description" content="两周一更的计划开始啦,向高级攻城狮出发，加油！！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="linux初级 | 阿勇者">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux初级
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-11-09 00:00:00" itemprop="dateCreated datePublished" datetime="2022-11-09T00:00:00+08:00">2022-11-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-11-13 23:24:22" itemprop="dateModified" datetime="2022-11-13T23:24:22+08:00">2022-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="linux初级"><a href="#linux初级" class="headerlink" title="linux初级"></a>linux初级</h1><h2 id="1、什么是操作系统"><a href="#1、什么是操作系统" class="headerlink" title="1、什么是操作系统"></a>1、什么是操作系统</h2><p>​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁</p>
+<h2 id="2、linux系统常用命令"><a href="#2、linux系统常用命令" class="headerlink" title="2、linux系统常用命令"></a>2、linux系统常用命令</h2><h4 id="1-、ls命令"><a href="#1-、ls命令" class="headerlink" title="(1)、ls命令"></a>(1)、ls命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ls --显示当前工作目录下的所有可见文件</span><br><span class="line">		 / :显示根目录下的所有文件</span><br><span class="line">		 -a :显示目录底下的所有文件，保存隐藏和可见文件</span><br><span class="line">		 -l :显示文件的详细信息</span><br><span class="line">		 -h :和-l配合使用，显示文件大小，b、k、m</span><br><span class="line">		 -lah :可组合使用</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-、目录切换命令"><a href="#2-、目录切换命令" class="headerlink" title="(2)、目录切换命令"></a>(2)、目录切换命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd [path] --有path时:跳转到某个路径底下</span><br><span class="line">						--无参数时: 跳转到home路径下</span><br><span class="line">$ pwd --查看当前所在目录</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-、mkdir命令"><a href="#3-、mkdir命令" class="headerlink" title="(3)、mkdir命令"></a>(3)、mkdir命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir [name] --创建文件夹</span><br><span class="line">        -p 可以根据输入到路径递归创建多个文件夹</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-、touch-cat-more-less命令"><a href="#4-、touch-cat-more-less命令" class="headerlink" title="(4)、touch-cat-more-less命令"></a>(4)、touch-cat-more-less命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ touch [file] --创建文件</span><br><span class="line">$ cat [file] --查看文件内容</span><br><span class="line">$ more [file] --可翻页显示文件内容，在文件内容过多的情况下使用，空格翻页，q退出</span><br><span class="line">$ less [file] --和more相反</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-、cp-mv-rm"><a href="#5-、cp-mv-rm" class="headerlink" title="(5)、cp-mv-rm"></a>(5)、cp-mv-rm</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ cp [file/dir] [path] --复制文件/文件夹到某个文件夹下</span><br><span class="line">     -r 用于文件夹的复制</span><br><span class="line">$ mv [file/dir] [path] --移动文件/文件夹到某个目录下</span><br><span class="line">$ rm [file,.....filen] --删除多个文件或者文件夹</span><br><span class="line">     -r 用于文件夹到删除</span><br><span class="line">     -f 强制删除文件/文件夹</span><br><span class="line">     *通配符</span><br><span class="line">     test*:表示匹配删除test开头的内容</span><br><span class="line">     *test:表示删除匹配test结尾的内容</span><br><span class="line">     *test*:表示删除包含有test的内容</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/04/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="redis学习笔记">
+                  <i class="fa fa-chevron-left"></i> redis学习笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cly-dev</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
