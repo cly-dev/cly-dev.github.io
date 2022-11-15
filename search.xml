@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git同步远程和本地分支</title>
+    <url>/2022/11/15/git%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF/</url>
+    <content><![CDATA[<h1 id="git同步远程和本地分支"><a href="#git同步远程和本地分支" class="headerlink" title="git同步远程和本地分支"></a>git同步远程和本地分支</h1><h2 id="1、针对分支的指令"><a href="#1、针对分支的指令" class="headerlink" title="1、针对分支的指令"></a>1、针对分支的指令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch -r 查看远程分支</span><br><span class="line">$ git branch 查看本地所有分支</span><br><span class="line">$ git branch -a 查看本地所有分支和远程分支</span><br><span class="line">$ git fetch 将远程主机的更新全部取回本地</span><br><span class="line">$ git fetch --prune 根据远程分支自动剪切本地对应的远程分支镜像</span><br><span class="line">$ git checkout 分支名 切换分支</span><br><span class="line">$ git checkout -b 分支名 新建一个新的分支，并切换到该分支</span><br><span class="line">$ git push origin -d 分支名 删除远程分支</span><br><span class="line">$ git branch -d 分支名 强制删除本地的分支</span><br><span class="line">$ git remote show origin 查看远程分支和本地分支的对应关系</span><br><span class="line">$ git branch prune origin 删除远程已经删除过的分支</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、场景分析"><a href="#2、场景分析" class="headerlink" title="2、场景分析"></a>2、场景分析</h2><h4 id="1-、同步别人新增到远程的分支"><a href="#1-、同步别人新增到远程的分支" class="headerlink" title="(1)、同步别人新增到远程的分支"></a>(1)、同步别人新增到远程的分支</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、先查看自己的本地分支对应远程分支是否有该新增的分支</span><br><span class="line">$ git branch -a</span><br><span class="line">2、通过fetch拉取远程主机的更新</span><br><span class="line">$ git fetch</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-、删除本地分支也要删除远程分支"><a href="#2-、删除本地分支也要删除远程分支" class="headerlink" title="(2)、删除本地分支也要删除远程分支"></a>(2)、删除本地分支也要删除远程分支</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git branch -d 分支名</span><br><span class="line">$ git push origin -d 分支名</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-、远程删除了分支，本地也想删除"><a href="#3-、远程删除了分支，本地也想删除" class="headerlink" title="(3)、远程删除了分支，本地也想删除"></a>(3)、远程删除了分支，本地也想删除</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、git fetch --prune</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>linux初级</title>
     <url>/2022/11/09/linux%E5%88%9D%E7%BA%A7/</url>
     <content><![CDATA[<h1 id="linux初级"><a href="#linux初级" class="headerlink" title="linux初级"></a>linux初级</h1><h2 id="1、什么是操作系统"><a href="#1、什么是操作系统" class="headerlink" title="1、什么是操作系统"></a>1、什么是操作系统</h2><p>​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁</p>

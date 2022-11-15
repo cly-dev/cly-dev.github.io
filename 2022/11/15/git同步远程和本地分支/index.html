@@ -20,29 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="linux初级1、什么是操作系统​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁 2、linux系统常用命令(1)、ls命令123456$ ls --显示当前工作目录下的所有可见文件		 &#x2F; :显示根目录下的所有文件		 -a :显示目录底下的所有文件，保存隐藏和可见文件		 -l :显示文件的详细信息		 -h :和-l配合">
+    <meta name="description" content="git同步远程和本地分支1、针对分支的指令1234567891011$ git branch -r 查看远程分支$ git branch 查看本地所有分支$ git branch -a 查看本地所有分支和远程分支$ git fetch 将远程主机的更新全部取回本地$ git fetch --prune 根据远程分支自动剪切本地对应的远程分支镜像$ git checkout 分支名 切换分支$ gi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux初级">
-<meta property="og:url" content="http://example.com/2022/11/09/linux%E5%88%9D%E7%BA%A7/index.html">
+<meta property="og:title" content="git同步远程和本地分支">
+<meta property="og:url" content="http://example.com/2022/11/15/git%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF/index.html">
 <meta property="og:site_name" content="阿勇者">
-<meta property="og:description" content="linux初级1、什么是操作系统​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁 2、linux系统常用命令(1)、ls命令123456$ ls --显示当前工作目录下的所有可见文件		 &#x2F; :显示根目录下的所有文件		 -a :显示目录底下的所有文件，保存隐藏和可见文件		 -l :显示文件的详细信息		 -h :和-l配合">
+<meta property="og:description" content="git同步远程和本地分支1、针对分支的指令1234567891011$ git branch -r 查看远程分支$ git branch 查看本地所有分支$ git branch -a 查看本地所有分支和远程分支$ git fetch 将远程主机的更新全部取回本地$ git fetch --prune 根据远程分支自动剪切本地对应的远程分支镜像$ git checkout 分支名 切换分支$ gi">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-11-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-13T15:24:22.071Z">
+<meta property="article:published_time" content="2022-11-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-15T07:42:46.021Z">
 <meta property="article:author" content="cly-dev">
-<meta property="article:tag" content="操作系统">
-<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2022/11/09/linux%E5%88%9D%E7%BA%A7/">
+<link rel="canonical" href="http://example.com/2022/11/15/git%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/11/09/linux%E5%88%9D%E7%BA%A7/","path":"2022/11/09/linux初级/","title":"linux初级"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/11/15/git%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF/","path":"2022/11/15/git同步远程和本地分支/","title":"git同步远程和本地分支"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>linux初级 | 阿勇者</title>
+<title>git同步远程和本地分支 | 阿勇者</title>
   
 
 
@@ -145,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E5%88%9D%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">linux初级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.</span> <span class="nav-text">1、什么是操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81linux%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">2、linux系统常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E3%80%81ls%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">(1)、ls命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E3%80%81%E7%9B%AE%E5%BD%95%E5%88%87%E6%8D%A2%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">(2)、目录切换命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E3%80%81mkdir%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">(3)、mkdir命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E3%80%81touch-cat-more-less%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">(4)、touch-cat-more-less命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E3%80%81cp-mv-rm"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">(5)、cp-mv-rm</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.</span> <span class="nav-text">git同步远程和本地分支</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E9%92%88%E5%AF%B9%E5%88%86%E6%94%AF%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-number">1.1.</span> <span class="nav-text">1、针对分支的指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90"><span class="nav-number">1.2.</span> <span class="nav-text">2、场景分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E3%80%81%E5%90%8C%E6%AD%A5%E5%88%AB%E4%BA%BA%E6%96%B0%E5%A2%9E%E5%88%B0%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%88%86%E6%94%AF"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">(1)、同步别人新增到远程的分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E3%80%81%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E4%B9%9F%E8%A6%81%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">(2)、删除本地分支也要删除远程分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E3%80%81%E8%BF%9C%E7%A8%8B%E5%88%A0%E9%99%A4%E4%BA%86%E5%88%86%E6%94%AF%EF%BC%8C%E6%9C%AC%E5%9C%B0%E4%B9%9F%E6%83%B3%E5%88%A0%E9%99%A4"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">(3)、远程删除了分支，本地也想删除</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -206,7 +204,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/09/linux%E5%88%9D%E7%BA%A7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/15/git%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -219,12 +217,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="linux初级 | 阿勇者">
+      <meta itemprop="name" content="git同步远程和本地分支 | 阿勇者">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          linux初级
+          git同步远程和本地分支
         </h1>
 
         <div class="post-meta-container">
@@ -234,15 +232,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-11-09 00:00:00" itemprop="dateCreated datePublished" datetime="2022-11-09T00:00:00+08:00">2022-11-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-11-13 23:24:22" itemprop="dateModified" datetime="2022-11-13T23:24:22+08:00">2022-11-13</time>
+      <time title="创建时间：2022-11-15 00:00:00 / 修改时间：15:42:46" itemprop="dateCreated datePublished" datetime="2022-11-15T00:00:00+08:00">2022-11-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -250,7 +242,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+          <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
         </span>
     </span>
 
@@ -264,16 +256,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="linux初级"><a href="#linux初级" class="headerlink" title="linux初级"></a>linux初级</h1><h2 id="1、什么是操作系统"><a href="#1、什么是操作系统" class="headerlink" title="1、什么是操作系统"></a>1、什么是操作系统</h2><p>​    计算机主要有硬件和软件组成，操作系统属于软件的一类，主要是协助用户调度硬件工作，充当用户和计算机硬件之间的桥梁</p>
-<h2 id="2、linux系统常用命令"><a href="#2、linux系统常用命令" class="headerlink" title="2、linux系统常用命令"></a>2、linux系统常用命令</h2><h4 id="1-、ls命令"><a href="#1-、ls命令" class="headerlink" title="(1)、ls命令"></a>(1)、ls命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ ls --显示当前工作目录下的所有可见文件</span><br><span class="line">		 / :显示根目录下的所有文件</span><br><span class="line">		 -a :显示目录底下的所有文件，保存隐藏和可见文件</span><br><span class="line">		 -l :显示文件的详细信息</span><br><span class="line">		 -h :和-l配合使用，显示文件大小，b、k、m</span><br><span class="line">		 -lah :可组合使用</span><br></pre></td></tr></table></figure>
+        <h1 id="git同步远程和本地分支"><a href="#git同步远程和本地分支" class="headerlink" title="git同步远程和本地分支"></a>git同步远程和本地分支</h1><h2 id="1、针对分支的指令"><a href="#1、针对分支的指令" class="headerlink" title="1、针对分支的指令"></a>1、针对分支的指令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -r 查看远程分支</span><br><span class="line">$ git branch 查看本地所有分支</span><br><span class="line">$ git branch -a 查看本地所有分支和远程分支</span><br><span class="line">$ git fetch 将远程主机的更新全部取回本地</span><br><span class="line">$ git fetch --prune 根据远程分支自动剪切本地对应的远程分支镜像</span><br><span class="line">$ git checkout 分支名 切换分支</span><br><span class="line">$ git checkout -b 分支名 新建一个新的分支，并切换到该分支</span><br><span class="line">$ git push origin -d 分支名 删除远程分支</span><br><span class="line">$ git branch -d 分支名 强制删除本地的分支</span><br><span class="line">$ git remote show origin 查看远程分支和本地分支的对应关系</span><br><span class="line">$ git branch prune origin 删除远程已经删除过的分支</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-、目录切换命令"><a href="#2-、目录切换命令" class="headerlink" title="(2)、目录切换命令"></a>(2)、目录切换命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ cd [path] --有path时:跳转到某个路径底下</span><br><span class="line">						--无参数时: 跳转到home路径下</span><br><span class="line">$ pwd --查看当前所在目录</span><br></pre></td></tr></table></figure>
+<h2 id="2、场景分析"><a href="#2、场景分析" class="headerlink" title="2、场景分析"></a>2、场景分析</h2><h4 id="1-、同步别人新增到远程的分支"><a href="#1-、同步别人新增到远程的分支" class="headerlink" title="(1)、同步别人新增到远程的分支"></a>(1)、同步别人新增到远程的分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、先查看自己的本地分支对应远程分支是否有该新增的分支</span><br><span class="line">$ git branch -a</span><br><span class="line">2、通过fetch拉取远程主机的更新</span><br><span class="line">$ git fetch</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-、mkdir命令"><a href="#3-、mkdir命令" class="headerlink" title="(3)、mkdir命令"></a>(3)、mkdir命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir [name] --创建文件夹</span><br><span class="line">        -p 可以根据输入到路径递归创建多个文件夹</span><br></pre></td></tr></table></figure>
+<h4 id="2-、删除本地分支也要删除远程分支"><a href="#2-、删除本地分支也要删除远程分支" class="headerlink" title="(2)、删除本地分支也要删除远程分支"></a>(2)、删除本地分支也要删除远程分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d 分支名</span><br><span class="line">$ git push origin -d 分支名</span><br></pre></td></tr></table></figure>
 
-<h4 id="4-、touch-cat-more-less命令"><a href="#4-、touch-cat-more-less命令" class="headerlink" title="(4)、touch-cat-more-less命令"></a>(4)、touch-cat-more-less命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ touch [file] --创建文件</span><br><span class="line">$ cat [file] --查看文件内容</span><br><span class="line">$ more [file] --可翻页显示文件内容，在文件内容过多的情况下使用，空格翻页，q退出</span><br><span class="line">$ less [file] --和more相反</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-、cp-mv-rm"><a href="#5-、cp-mv-rm" class="headerlink" title="(5)、cp-mv-rm"></a>(5)、cp-mv-rm</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ cp [file/dir] [path] --复制文件/文件夹到某个文件夹下</span><br><span class="line">     -r 用于文件夹的复制</span><br><span class="line">$ mv [file/dir] [path] --移动文件/文件夹到某个目录下</span><br><span class="line">$ rm [file,.....filen] --删除多个文件或者文件夹</span><br><span class="line">     -r 用于文件夹到删除</span><br><span class="line">     -f 强制删除文件/文件夹</span><br><span class="line">     *通配符</span><br><span class="line">     test*:表示匹配删除test开头的内容</span><br><span class="line">     *test:表示删除匹配test结尾的内容</span><br><span class="line">     *test*:表示删除包含有test的内容</span><br></pre></td></tr></table></figure>
+<h4 id="3-、远程删除了分支，本地也想删除"><a href="#3-、远程删除了分支，本地也想删除" class="headerlink" title="(3)、远程删除了分支，本地也想删除"></a>(3)、远程删除了分支，本地也想删除</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1、git fetch --prune</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -293,23 +282,16 @@
   </div>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
-              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/10/04/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="redis学习笔记">
-                  <i class="fa fa-chevron-left"></i> redis学习笔记
+                <a href="/2022/11/09/linux%E5%88%9D%E7%BA%A7/" rel="prev" title="linux初级">
+                  <i class="fa fa-chevron-left"></i> linux初级
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/11/15/git%E5%90%8C%E6%AD%A5%E8%BF%9C%E7%A8%8B%E5%92%8C%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF/" rel="next" title="git同步远程和本地分支">
-                  git同步远程和本地分支 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
